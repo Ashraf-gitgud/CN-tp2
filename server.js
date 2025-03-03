@@ -17,10 +17,12 @@ db.once('open', () => console.log('Connected'))
 const chefs = require('./Routes/Chef')
 const recettes = require('./Routes/Recette')
 const restaurants = require('./Routes/Restaurant')
+const auth = require('./Routes/Authentification')
 
 app.use('/chefs', chefs)
 app.use('/recettes', recettes)
 app.use('/restaurants', restaurants)
+app.use('/auth', auth)
 
 app.listen(port, () => {
     console.log('Server running on ' + port)
