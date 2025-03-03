@@ -5,6 +5,7 @@ const express = require("express")
 const mongoose = require("mongoose")
 const cors = require("cors")
 const app = express()
+const verifyToken = require("./Middleware/auth.js")
 
 app.use(cors())
 app.use(express.json())
@@ -20,7 +21,7 @@ const restaurants = require('./Routes/Restaurant')
 const auth = require('./Routes/Authentification')
 
 app.use('/chefs', chefs)
-app.use('/recettes', recettes)
+app.use('/recettes', verifyToken, recettes)
 app.use('/restaurants', restaurants)
 app.use('/auth', auth)
 

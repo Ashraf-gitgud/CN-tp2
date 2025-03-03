@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
 const RestaurantSchema = new mongoose.Schema({
   name: String,
@@ -10,4 +10,4 @@ const RestaurantSchema = new mongoose.Schema({
   recettes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Recette' }]
 });
 
-module.exports = mongoose.model('Restaurant', RestaurantSchema);
+module.exports = mongoose.model('Restaurant', RestaurantSchema)
